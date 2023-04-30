@@ -30,6 +30,13 @@ string[] ArrayShortSymbol(string[] array, int count)
 	}
 	return rezult;
 }
+void PrintArray(string[] array)
+{
+	Console.Write("[");
+	for (int i = 0; i < array.Length - 1; i++)
+		Console.Write($"{array[i]}, ");
+	Console.WriteLine($"{array[array.Length - 1]}]");
+}
 Console.Clear();
 Console.Write("Введите количество элементов массива: ");
 int n = Convert.ToInt32(Console.ReadLine());
@@ -47,5 +54,8 @@ int count = FindShortSymbol(array);
 if (count == 0) 
 Console.WriteLine("Конечный массив: []\nВ массиве нет элементов, длина которых меньше, либо равна 3");
 else
+{
 	string [] rezultArray = ArrayShortSymbol(array, count);
-	
+	Console.Write("Конечный массив: ");
+	PrintArray(rezultArray);
+}

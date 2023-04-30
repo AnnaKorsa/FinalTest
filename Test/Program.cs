@@ -6,6 +6,16 @@
 		array[i] = Console.ReadLine()!;
 	}
 }
+int FindShortSymbol(string[] array)
+{
+	int count = 0;
+	for (int i = 0; i < array.Length; i++)
+	{
+		if (array[i].Length <= 3)
+			count++;
+	}
+	return count;
+}
 Console.Clear();
 Console.Write("Введите количество элементов массива: ");
 int n = Convert.ToInt32(Console.ReadLine());
